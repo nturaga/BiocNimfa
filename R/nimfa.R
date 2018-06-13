@@ -22,8 +22,7 @@ load_nimfa<-
         } else {
             ## Create and install package, but package needs all dependencies
             reticulate::virtualenv_install(envname = virtualenv,
-                                           packages = c("nose","matplotlib",
-                                                        "numpy","scipy", "nimfa"))
+                                           packages = c("nimfa"))
             reticulate::use_virtualenv(file.path("~/.virtualenvs", virtualenv))
         }
         ## import
