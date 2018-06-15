@@ -1,11 +1,13 @@
 #' Load nimfa library in R
 #'
+#' @param virtualenv Name of virtualenv
+#' @return The nimfa module as a python builtin module
 #' @importFrom reticulate use_virtualenv
 #' @importFrom reticulate import
 #' @importFrom reticulate virtualenv_create
 #' @importFrom reticulate virtualenv_install
 #' @examples
-#' nimfa = load_nimfa()
+#' nimfa = install_nimfa()
 #' v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
 #' lsnmf <- nimfa$Lsnmf(v, seed="random_vcol", rank=50L, max_iter=100L)
 #' lsnmf_fit <- lsnmf()
