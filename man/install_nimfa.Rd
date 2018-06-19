@@ -2,23 +2,28 @@
 % Please edit documentation in R/nimfa.R
 \name{install_nimfa}
 \alias{install_nimfa}
-\title{Load nimfa library in R}
+\alias{nimfa}
+\title{Import python nimfa library for use in R}
 \usage{
-install_nimfa(virtualenv = "BiocNimfa")
+install_nimfa(envname = "BiocNimfa")
+
+nimfa(envname = "BiocNimfa")
 }
 \arguments{
-\item{virtualenv}{Name of virtualenv}
+\item{envname}{character(1) name of the virtual environment
+(usually under `~/.virtualenvs` where Nimfa and its python
+dependencies are available.}
 }
 \value{
 The nimfa module as a python builtin module
 }
 \description{
-Load nimfa library in R
+Import python nimfa library for use in R
 }
 \examples{
-nimfa = install_nimfa()
+nimfa = import_nimfa()
 v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
 lsnmf <- nimfa$Lsnmf(v, seed="random_vcol", rank=50L, max_iter=100L)
 lsnmf_fit <- lsnmf()
-print(lsnmf_fit$fit$rss())
+lsnmf_fit$fit$rss()
 }
