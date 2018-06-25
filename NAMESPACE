@@ -2,5 +2,10 @@
 
 export(install_nimfa)
 export(nimfa)
-importFrom(reticulate,py_install)
+importFrom(reticulate,import)
 importFrom(reticulate,use_virtualenv)
+importFrom(reticulate,virtualenv_create)
+importFrom(reticulate,virtualenv_install)
+importFrom(reticulate,virtualenv_list)
+importFrom(utils,packageDescription)
+

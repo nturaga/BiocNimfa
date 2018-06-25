@@ -1,16 +1,19 @@
 Package: BiocNimfa
-Title: Bioconductor package to interface with python package Nimfa.
-Version: 0.0.0.9000
-Authors@R: person("Nitesh", "Turaga", email = "nitesh.turaga@roswellpark.org", role = c("aut", "cre"))
+Title: Bioconductor package to interface with python package Nimfa
+Version: 0.0.1
+Authors@R:
+    person(
+        "Nitesh", "Turaga", email = "nitesh.turaga@roswellpark.org",
+        role = c("aut", "cre")
+    )
 Description: BiocNimfa is an R interface for the python library Nimfa for
     nonnegative matrix factorization. It includes implementations of 
     several factorization methods, initialization approaches, and quality 
     scoring. Both dense and sparse matrix representation are supported.
 Depends: R (>= 3.5.0), reticulate
 License: BSD
-Encoding: UTF-8
 URL: https://github.com/nturaga/BiocNimfa
-SystemRequirements: Python (>= 2.7.0), numpy, nose, scipy, matplotlib
+PythonRequirements: Python (>= 2.7.0), nimfa, matplotlib
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests: testthat
