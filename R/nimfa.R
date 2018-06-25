@@ -20,7 +20,7 @@ install_nimfa <-
      
         reticulate::use_virtualenv(file.path("~/.virtualenvs",
                                                  virtualenv))
-        suppressWarnings(reticulate::import("nimfa"))
+
     }
 
 
