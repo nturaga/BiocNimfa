@@ -7,7 +7,7 @@
 \usage{
 install_nimfa(envname = "BiocNimfa")
 
-nimfa(envname = "BiocNimfa")
+nimfa()
 }
 \arguments{
 \item{envname}{character(1) name of the virtual environment
@@ -21,7 +21,7 @@ The nimfa module as a python builtin module
 Import python nimfa library for use in R
 }
 \examples{
-nimfa = import_nimfa()
+nimfa = nimfa()
 v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
 lsnmf <- nimfa$Lsnmf(v, seed="random_vcol", rank=50L, max_iter=100L)
 lsnmf_fit <- lsnmf()
