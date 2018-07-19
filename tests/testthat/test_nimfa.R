@@ -1,7 +1,7 @@
 context("BiocNimfa")
 
 test_that("nimfa loads and performs basic test", {
-    nimfa = install_nimfa()
+    nimfa = nimfa()
     v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
     lsnmf <- nimfa$Lsnmf(v, seed='random_vcol', rank=50L, max_iter=100L)
     lsnmf_fit <- lsnmf()
@@ -14,13 +14,7 @@ test_that("nimfa loads and performs basic test", {
 
 
 test_that("nimfa class is a python.builtin.module", {
-    nimfa <- install_nimfa()
+    nimfa <- nimfa()
     expect_is(nimfa, "python.builtin.module")
     expect_is(nimfa, "python.builtin.object")
-})
-
-
-test_that("nimfa is installed and file exists", {
-    nimfa <- install_nimfa()
-    expect_true(file.exists("~/.virtualenvs/BiocNimfa/"))
 })
