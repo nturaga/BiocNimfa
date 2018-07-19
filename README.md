@@ -4,8 +4,8 @@ One strategy
 - BiocNimfa/python-requirements.txt contains output of pip freeze
 - build system creates a `~/.virtualenvs/<BiocPkgName>` virtual
   environment (could be anywhere) with python and packages
-      
-        virtualenv -p python3.5 ~/.virtualenvs/<BiocPkgName>
+
+		virtualenv -p python3.5 ~/.virtualenvs/<BiocPkgName>
 
 - activate virtualenv
 
@@ -21,6 +21,29 @@ One strategy
 
 - build system sets
 
-        export RETICULATE_PYTHON=~/.virtualenvs/<BiocPkgName>/bin/python
-        
+		export RETICULATE_PYTHON=~/.virtualenvs/<BiocPkgName>/bin/python
+
 - `R -e "reticulate::import('nimfa')"` works!
+
+
+Installation Commands
+
+	virtualenv ~/.virtualenvs/BiocNimfa
+	source ~/.virtualenvs/BiocNimfa/bin/activate
+	pip install -r BiocNimfa/python_requirements.txt
+	deactivate
+
+Shell + R commands
+
+shell:
+
+	source ~/.virtualenv/BiocNimfa/bin/activate
+
+R:
+
+	library(BiocNimfa)
+	nimfa = nimfa()
+
+R:
+
+	devtools::test()

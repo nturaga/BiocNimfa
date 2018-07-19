@@ -1,11 +1,8 @@
 #' @importFrom utils packageDescription
-#' @importFrom reticulate virtualenv_create virtualenv_install
+#' @importFrom reticulate virtualenv_install
 .install_nimfa <- function(envname) {
-    pkgs <- packageDescription(
-        "BiocNimfa", fields="PythonRequirements", encoding=NA
-    )
-    pkgs <- trimws(unlist(strsplit(pkgs, ",")))
-    pkgs <- pkgs[!startsWith(pkgs, "Python")]
+
+    pkgs <- readLines("python_requirements.txt")
     virtualenv_create(envname)
     virtualenv_install(envname, pkgs)
 }
@@ -38,9 +35,11 @@ install_nimfa <-
         )
     }
 
-    if (!envname %in% virtualenv_list())
+    if (!envname %in% virtualenv_list()) {
+
         .install_nimfa(envname)
-    use_virtualenv(envname)
+    }
+    use_virtualenv(virtualenv=envname)
 
     ## import
     import("nimfa")
@@ -50,13 +49,7 @@ install_nimfa <-
 #' @export
 #' @rdname install_nimfa
 nimfa <-
-    function(envname = "BiocNimfa")
+    function()
 {
-    if (!envname %in% virtualenv_list())
-        stop(
-            "'", envname, "' virtual environment not available ",
-            "see `?install_nimfa`"
-        )
-    use_virtualenv(envname)
     import("nimfa")
 }
