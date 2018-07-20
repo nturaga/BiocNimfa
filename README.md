@@ -1,4 +1,8 @@
-One strategy
+README for BiocNimfa
+=====
+
+
+## One strategy
 
 - DESCRIPTION:PythonRequirements: lists python version and packages.
 - BiocNimfa/python-requirements.txt contains output of pip freeze
@@ -25,6 +29,7 @@ One strategy
 
 - `R -e "reticulate::import('nimfa')"` works!
 
+## Second strategy
 
 Installation Commands
 
@@ -37,13 +42,19 @@ Shell + R commands
 
 shell:
 
+Activate virtualenv before using reticulate or starting R.
+
 	source ~/.virtualenv/BiocNimfa/bin/activate
 
 R:
+
+Load BiocNimfa and import the module with function `nimfa()`
 
 	library(BiocNimfa)
 	nimfa = nimfa()
 
 R:
+
+Run test cases included in BiocNimfa
 
 	devtools::test()
