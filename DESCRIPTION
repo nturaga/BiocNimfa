@@ -1,4 +1,4 @@
-Package: BiocNimfa
+Package: biocNimfa
 Title: Bioconductor package to interface with python package Nimfa
 Version: 0.0.1
 Authors@R:
