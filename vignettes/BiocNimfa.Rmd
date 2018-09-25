@@ -25,6 +25,7 @@ The BiocNimfa package is being used to test the Bioconductor build system. BiocN
 # Quick Example
 
 ```{r quick_example}
+library(BiocNimfa)
 nimfa = nimfa()
 v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
 lsnmf <- nimfa$Lsnmf(v, seed="random_vcol", rank=50L, max_iter=100L)

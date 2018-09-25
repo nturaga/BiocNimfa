@@ -1,5 +1,6 @@
 #' @importFrom utils packageDescription
 #' @importFrom reticulate virtualenv_install
+#' @importFrom reticulate virtualenv_create
 .install_nimfa <- function(envname) {
 
     pkgs <- readLines("python_requirements.txt")
