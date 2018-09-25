@@ -13,7 +13,7 @@ Description: BiocNimfa is an R interface for the python library Nimfa for
 Depends: R (>= 3.5.0), reticulate
 License: GPL-3
 URL: https://github.com/nturaga/BiocNimfa
-PythonRequirements: Python (>= 2.7.0), nimfa, matplotlib
+PythonRequirements: Python (== 2.7.0), nimfa, matplotlib
 LazyData: true
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr
