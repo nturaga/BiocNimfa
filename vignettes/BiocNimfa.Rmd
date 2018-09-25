@@ -1,0 +1,39 @@
+---
+title: "BiocNimfa vignette"
+author:
+- name: Nitesh Turaga
+  affiliation: Roswell Park Cancer Institute, Buffalo, NY
+- name: Martin Morgan
+  affiliation: Roswell Park Cancer Institute, Buffalo, NY
+output:
+  BiocStyle::html_document:
+    toc_float: true
+  BiocStyle::pdf_document: default
+package: BiocNimfa
+abstract: |
+  BiocNimfa is a test package to check the R-python interface through reticulate.
+vignette: |
+  %\VignetteIndexEntry{BiocNimfa vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+The BiocNimfa package is being used to test the Bioconductor build system. BiocNimfa package wraps a python package `nimfa` which is used for nonnegative matrix factorization.
+
+# Quick Example
+
+```{r quick_example}
+nimfa = nimfa()
+v <- nimfa$examples$medulloblastoma$read(normalize=TRUE)
+lsnmf <- nimfa$Lsnmf(v, seed="random_vcol", rank=50L, max_iter=100L)
+lsnmf_fit <- lsnmf()
+lsnmf_fit$fit$rss()
+```
+
+# Session info {.unnumbered}
+
+```{r sessionInfo}
+sessionInfo()
+```
